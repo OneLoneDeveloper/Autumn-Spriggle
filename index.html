@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sunset Sea Studio</title>
+  <meta name="description" content="Where autumn's warmth meets the sea's tranquility." />
+  <link rel="preload" as="image" href="assets/hero-banner.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="container nav">
+      <div class="brand">Sunset Sea Studio</div>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" data-nav>
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <img src="assets/hero-banner.jpg" alt="Warm sunset over the sea" class="hero-bg" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1 class="title">Where Autumn Meets the Sea</h1>
+      <p class="subtitle">Stunning paintings and illustrations inspired by golden hours, gentle waves, and crisp evening air.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#gallery">View Gallery</a>
+        <a class="btn btn-outline" href="#about">Learn More</a>
+      </div>
+    </div>
+    <!-- Moved scroll-indicator to be a direct child of .hero so it sits at the bottom of the section -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="mouse"><div class="wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="gradient-text">Art Gallery</h2>
+        <p class="muted">Each piece captures a moment where autumn's warmth meets the sea's tranquility, creating timeless beauty through color and light.</p>
+      </div>
+      <div class="grid cards-3">
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/artwork-1.jpg" alt="Autumn Serenity artwork" />
+          </div>
+          <div class="card-body">
+            <h3>Autumn Serenity</h3>
+            <p>Warm sunset colors flowing like autumn leaves.</p>
+            <div class="price">$850</div>
+            <button class="btn btn-secondary">Inquire</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/artwork-2.jpg" alt="Coastal Embrace artwork" />
+          </div>
+          <div class="card-body">
+            <h3>Coastal Embrace</h3>
+            <p>Soft ocean blues meeting amber skies at dusk.</p>
+            <div class="price">$1,200</div>
+            <button class="btn btn-secondary">Inquire</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/artwork-3.jpg" alt="Twilight Reflections artwork" />
+          </div>
+          <div class="card-body">
+            <h3>Twilight Reflections</h3>
+            <p>Shimmering water mirrors the fading light.</p>
+            <div class="price">$980</div>
+            <button class="btn btn-secondary">Inquire</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section bg-alt">
+    <div class="container about-grid">
+      <div class="about-media">
+        <div class="skew-bg"></div>
+        <img class="about-img" src="assets/artist-portrait.jpg" alt="Artist portrait" />
+      </div>
+      <div class="about-copy">
+        <h2 class="gradient-text">About Elena</h2>
+        <p>I am a passionate artist who finds inspiration in the gentle transition between seasons and the eternal dance of waves upon the shore. My work captures the fleeting moments where autumn's golden embrace meets the infinite blue of coastal waters.</p>
+        <p>Through layered textures and glowing color palettes, I aim to evoke calm, wonder, and that quiet feeling of standing at the edge of the world—just before night takes the sky.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section gradient">
+    <div class="container">
+      <div class="section-head light">
+        <h2>Get In Touch</h2>
+        <p>Interested in commissioning a piece or learning more about my work? I'd love to hear from you.</p>
+      </div>
+      <div class="contact-grid">
+        <!-- Keep the form using a front-end service (replace FORM_ID in action below to activate) -->
+        <form class="card form" method="POST" action="https://formspree.io/f/FORM_ID">
+          <div class="form-row two">
+            <label>First Name
+              <input name="firstName" type="text" placeholder="Your first name" required />
+            </label>
+            <label>Last Name
+              <input name="lastName" type="text" placeholder="Your last name" required />
+            </label>
+          </div>
+          <label>Email
+            <input name="email" type="email" placeholder="you@example.com" required />
+          </label>
+          <label>Message
+            <textarea name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
+          </label>
+          <!-- You can set a redirect: <input type="hidden" name="_next" value="https://yoursite.com/thanks.html"> -->
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="form-note muted">Tip: To enable this form, create a free Formspree form and replace <code>FORM_ID</code> in the action URL.</p>
+        </form>
+
+        <!-- Split contact info into separate small cards -->
+        <aside class="contact-aside">
+          <div class="grid contact-cards">
+            <div class="card contact-card">
+              <h3>Email</h3>
+              <p><a href="mailto:hello@sunsetseastudio.com">hello@sunsetseastudio.com</a></p>
+            </div>
+            <div class="card contact-card">
+              <h3>Phone</h3>
+              <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+            </div>
+            <div class="card contact-card">
+              <h3>Location</h3>
+              <p>California Coast</p>
+            </div>
+            <div class="card contact-card">
+              <h3>Social</h3>
+              <p class="socials">
+                <a href="#" aria-label="Instagram">Instagram</a> ·
+                <a href="#" aria-label="Facebook">Facebook</a>
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Sunset Sea Studio. All rights reserved.</p>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
