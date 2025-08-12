@@ -164,3 +164,13 @@ body{
   .hero .btn-primary { animation: none; }
   .hero .cta .btn { transition: none; }
 }
+
+
+@media (max-width: 992px) {
+  .contact-grid .form,
+  .contact-grid .contact-card {
+    max-width: 600px;  /* pick a width that looks good */
+    margin-inline: auto; /* center horizontally */
+    width: 100%; /* still responsive */
+  }
+}
