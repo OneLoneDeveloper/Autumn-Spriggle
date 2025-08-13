@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,7 +7,10 @@
   <title>Autumn</title>
   <!-- TBD -->
   <meta name="description" content="Where autumn's warmth meets the sea's tranquility." />
-  <link rel="preload" as="image" href="assets/hero-banner.jpg" />
+  <!-- <link rel="preload" as="image" href="assets/hero-banner.jpg" />
+  <link rel="preload" as="image" href="assets/hero-banner-dark.jpg" /> -->
+  <link rel="preload" as="video" href="assets/hero-sunset.mp4" type="video/mp4" />
+  <link rel="preload" as="video" href="assets/hero-night.mp4"  type="video/mp4" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -25,18 +28,33 @@
         <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <span class="switch-wrap">
+          <input id="mode-toggle" class="switch-input" type="checkbox" aria-label="Toggle theme"/>
+          <label class="switch" for="mode-toggle" aria-hidden="true"></label>
+        </span>
       </nav>
-
-      <!-- theme toggle button -->
-      <button class="theme-toggle" id="themeToggle" aria-pressed="false" title="Toggle theme">
-        Sunset / After Dark
-      </button>
     </div>
   </header>
 
   <!-- Hero -->
   <section id="home" class="hero">
-    <img src="assets/hero-banner.jpg" alt="Warm sunset over the sea" class="hero-bg" />
+    <!-- <img src="assets/hero-banner.jpg" alt="Warm sunset over the sea" class="hero-bg hero-bg--light" />
+    <img src="assets/hero-banner-dark.jpg" alt="" class="hero-bg hero-bg--dark" aria-hidden="true" /> -->
+    <video
+      class="hero-video hero-video--light"
+      src="assets/hero-sunset.mp4"
+      poster="assets/hero-banner.jpg"
+      autoplay muted loop playsinline preload="auto">
+    </video>
+
+    <video
+      class="hero-video hero-video--dark"
+      src="assets/hero-night.mp4"
+      poster="assets/hero-banner-dark.jpg"
+      autoplay muted loop playsinline preload="auto"
+      aria-hidden="true">
+    </video>
+
     <div class="hero-overlay"></div>
     <div class="hero-content container">
       <h1 class="title">Autumn Spriggle</h1>
@@ -134,6 +152,24 @@
         <!-- TBD -->
         <p>I am a passionate artist who finds inspiration in the gentle transition between seasons and the eternal dance of waves upon the shore. My work captures the fleeting moments where autumn's golden embrace meets the infinite blue of coastal waters.</p>
         <p>Through layered textures and glowing color palettes, I aim to evoke calm, wonder, and that quiet feeling of standing at the edge of the world—just before night takes the sky.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">1500+</span>
+            <span class="stat-label">Artworks Created</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Gallery Exhibitions</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">8 Years</span>
+            <span class="stat-label">Professional Experience at age 20</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3 times</span>
+            <span class="stat-label">President of the United States</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -180,13 +216,12 @@
             </div>
             <div class="card contact-card">
               <h3>Location</h3>
-              <p>California Coast</p>
+              <p>San Diego, California</p>
             </div>
             <div class="card contact-card">
-              <h3>Social</h3>
+              <h3>Social Media</h3>
               <p class="socials">
-                <a href="#" aria-label="Instagram">Instagram</a> ·
-                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
               </p>
             </div>
           </div>
@@ -198,7 +233,7 @@
   <footer class="footer">
     <div class="container">
       <p>© <span id="year"></span> Sunset Sea Studio. All rights reserved.</p>
-      <a class="to-top" href="#top">Back to top ↑</a>
+      <!-- <a class="to-top" href="#top">Back to top ↑</a> -->
     </div>
   </footer>
 
