@@ -56,13 +56,8 @@ function applyTheme(theme){
   syncVideos(theme);
 }
 
-// Default: saved choice, otherwise light (Sunset)
-// If you want to respect system on first visit, swap the line below with the commented block.
 const saved = localStorage.getItem(THEME_KEY);
 applyTheme(saved ? saved : 'light');
-
-// Respect system preference on first visit (optional)
-// applyTheme(saved ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 
 modeToggle?.addEventListener('change', () => {
   const next = modeToggle.checked ? 'dark' : 'light';

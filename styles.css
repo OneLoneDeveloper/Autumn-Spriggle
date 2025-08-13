@@ -18,7 +18,7 @@
   /* Text Colors */
   --text:#1f1812; --muted:#5b4e44; --text-light: #ffffff;
 
-  /* Accesnt Colors */
+  /* Accent Colors */
   --accent: #ff8800; --accent-secondary: #f07955;
 
   /* Gradient Colors */
@@ -43,26 +43,24 @@
   --navbar-blur: 18px;
 
   /* Overlays */
-  --overlay-center: rgba(0,0,0,0.35);
-  --overlay-sides: rgba(0,0,0,0.25);
+  --overlay-center: rgba(0,0,0,0);
+  --overlay-sides: rgba(0,0,0,0);
 
   /* Text */
-  --text:#e8e8f0; 
-  --muted:#a9adc2; 
-  --text-light:#ffffff;
+  --text:#e8e8f0; --muted:#a9adc2; --text-light:#ffffff;
 
-  /* Accents / gradients (After Dark) */
-  --accent:#5aa7ff; 
-  --accent-secondary:#8d6bff;
-  --gradient-start:#22304a; 
-  --gradient-end:#0f1a2e;
+  /* Accent Colors*/
+  --accent:#5aa7ff; --accent-secondary:#8d6bff;
+
+  /* Gradient Colors */
+  --gradient-start:#22304a; --gradient-end:#0f1a2e;
 
   /* Shadows tuned for dark UI */
-  --shadow:0 5px 20px rgba(0,0,0,.45);
-  --shadow-hover:0 8px 24px rgba(0,0,0,.6);
+  --shadow:0 5px 20px rgba(101, 110, 155, 0.2);
+  --shadow-hover:0 8px 24px rgba(101, 110, 155, 0.4);
 
   /* Toggle colors (checked state) */
-  --toggle-on-bg:#0b3d91; /* deep blue for "After Dark" */
+  --toggle-on-bg:#0b3d91;
 }
 
 *{ box-sizing:border-box; }
@@ -165,7 +163,6 @@ body{
   object-fit:cover; filter:contrast(1.05) saturate(1.05);
 }
 
-/* Stack both images, crossfade on theme change */
 .hero-bg--dark{ opacity:0; transition:opacity .4s ease; }
 .hero-bg--light{ opacity:1; transition:opacity .4s ease; }
 
@@ -176,17 +173,15 @@ body{
   filter:contrast(1.05) saturate(1.05);
   transition: opacity .45s ease;
   opacity:1;
-  pointer-events:none; /* avoid iOS taps */
+  pointer-events:none;
 }
 
-/* Default: show light, hide dark */
 .hero-video--dark{ opacity:0; }
 
 /* Flip in dark mode */
 :root[data-theme="dark"] .hero-video--dark{ opacity:1; }
 :root[data-theme="dark"] .hero-video--light{ opacity:0; }
 
-/* Respect reduced motion (keep first frame/poster visible, no crossfade) */
 @media (prefers-reduced-motion: reduce){
   .hero-video{ transition:none; }
 }
