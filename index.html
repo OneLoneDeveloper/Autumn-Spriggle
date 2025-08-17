@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Autumn</title>
-  <!-- TBD -->
   <meta name="description" content="Where autumn's warmth meets the sea's tranquility." />
   <link rel="preload" as="video" href="assets/hero-sunset.mp4" type="video/mp4" />
   <link rel="preload" as="video" href="assets/hero-night.mp4"  type="video/mp4" />
@@ -20,7 +19,6 @@
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
       <nav class="nav-links" data-nav>
         <a href="#home">Home</a>
         <a href="#gallery">Gallery</a>
@@ -54,7 +52,6 @@
     <div class="hero-overlay"></div>
     <div class="hero-content container">
       <h1 class="title">Autumn Spriggle</h1>
-      <!-- TBD -->
       <p class="subtitle">Art that blends colors, stirs emotion, and tells a story.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#gallery">View Gallery</a>
@@ -89,7 +86,6 @@
           </div>
           <div class="card-body">
             <p>Futuristic Nanobot</p>
-            <!-- <p>Soft ocean blues meeting amber skies at dusk.</p> -->
           </div>
         </article>
         <article class="card">
@@ -98,36 +94,8 @@
           </div>
           <div class="card-body">
             <p>The Great Wave</p>
-            <!-- <p>Shimmering water mirrors the fading light.</p> -->
           </div>
         </article>
-        <!-- <article class="card">
-          <div class="card-media">
-            <img src="assets/artwork-1.jpg" alt="Autumn Serenity artwork" />
-          </div>
-          <div class="card-body">
-            <h3>Autumn Serenity</h3>
-            <p>Warm sunset colors flowing like autumn leaves.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/artwork-2.jpg" alt="Coastal Embrace artwork" />
-          </div>
-          <div class="card-body">
-            <h3>Coastal Embrace</h3>
-            <p>Soft ocean blues meeting amber skies at dusk.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/artwork-3.jpg" alt="Twilight Reflections artwork" />
-          </div>
-          <div class="card-body">
-            <h3>Twilight Reflections</h3>
-            <p>Shimmering water mirrors the fading light.</p>
-          </div>
-        </article> -->
       </div>
     </div>
   </section>
@@ -138,12 +106,17 @@
       <div class="about-media">
         <div class="about-frame">
           <div class="skew-bg"></div>
-          <img class="about-img" src="assets/artist-portrait.jpg" alt="Artist portrait" />
+          <img id="about-gif"
+            class="about-img"
+            src="assets/pinwheel.gif"
+            data-light="assets/pinwheel.gif"
+            data-dark="assets/pinwheel-night.gif"
+            alt="Pinwheel animation">
+          <!-- <img class="about-img" src="assets/pinwheel-night.gif" alt="Artist portrait" /> -->
         </div>
       </div>
       <div class="about-copy">
         <h2 class="gradient-text">About Autumn</h2>
-        <!-- TBD -->
         <p>Autumn Spriggle is a digital marketer, content writer, and digital artist. With a background in storytelling and design, she brings clarity, creativity, and thoughtfulness to her work. Her pieces are shaped not only by imagination but also by a meticulous approach to composition and user experience.</p>
         <p>Autumn is skilled in content writing and web design. Skills that allow her to blend visual expression with clear communication. This combination gives her work both emotional depth and practical precision.</p>
         <div class="about-stats">
@@ -155,14 +128,6 @@
             <span class="stat-number">20+</span>
             <span class="stat-label">Artworks created</span>
           </div>
-          <!-- <div class="stat">
-            <span class="stat-number">Writing & Storytelling</span>
-            <span class="stat-label">Professional Experience at age 20</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">Digital Marketing</span>
-            <span class="stat-label">President of the United States</span>
-          </div> -->
         </div>
       </div>
     </div>
@@ -200,14 +165,6 @@
         <!-- Split contact info into separate small cards -->
         <aside class="contact-aside">
           <div class="grid contact-cards">
-            <!-- <div class="card contact-card">
-              <h3>Email</h3>
-              <p><a href="mailto:hello@sunsetseastudio.com">hello@sunsetseastudio.com</a></p>
-            </div> -->
-            <!-- <div class="card contact-card">
-              <h3>Phone</h3>
-              <p><a href="tel:+15551234567">(555) 123-4567</a></p>
-            </div> -->
             <div class="card contact-card">
               <h3>Hometown</h3>
               <p>Kennewick, Washington</p>

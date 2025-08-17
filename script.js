@@ -63,9 +63,31 @@ modeToggle?.addEventListener('change', () => {
   const next = modeToggle.checked ? 'dark' : 'light';
   applyTheme(next);
   localStorage.setItem(THEME_KEY, next);
+  const isDark = document.documentElement.classList.contains('dark') ||
+                 document.body.classList.contains('dark') ||
+                 document.documentElement.dataset.theme === 'dark';
+  setAboutGifForTheme(isDark);
 });
 
 // Reduced motion: stop autoplay completely
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   [lightVid, darkVid].forEach(v => v?.pause());
 }
+
+
+// Place near your theme code
+const aboutGif = document.getElementById('about-gif');
+
+function setAboutGifForTheme(isDark) {
+  if (!aboutGif) return;
+  const lightSrc = aboutGif.dataset.light || 'pinwheel.gif';
+  const darkSrc  = aboutGif.dataset.dark  || 'pinwheel-dark.gif';
+  aboutGif.src = isDark ? darkSrc : lightSrc;
+}
+
+// 1) run once on load (adjust selector to match how you mark dark mode)
+setAboutGifForTheme(
+  document.documentElement.classList.contains('dark') ||
+  document.body.classList.contains('dark') ||
+  document.documentElement.dataset.theme === 'dark'
+);
