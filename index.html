@@ -15,7 +15,7 @@
   <!-- Header -->
   <header class="header" id="top">
     <div class="container nav">
-      <div class="brand">Autumn Spriggle</div>
+      <div class="brand"><a class="no-style" href="index.html">Autumn Spriggle</a></div>
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -54,7 +54,7 @@
       <h1 class="title">Autumn Spriggle</h1>
       <p class="subtitle">Art that blends colors, stirs emotion, and tells a story.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#gallery">View Gallery</a>
+        <a class="btn btn-primary" href="gallery.html">View Full Gallery</a>
         <a class="btn btn-outline" href="#about">Learn More</a>
       </div>
     </div>
@@ -73,16 +73,15 @@
       <div class="grid cards-3">
         <article class="card">
           <div class="card-media">
-            <img src="assets/artwork-1.jpg" alt="Autumn Serenity artwork" />
+            <img src="assets/artwork-1.jpg" alt="Rusty Submarine" />
           </div>
           <div class="card-body">
             <p>Rusty Submarine</p>
-            <!-- <p>Warm sunset colors flowing like autumn leaves.</p> -->
           </div>
         </article>
         <article class="card">
           <div class="card-media">
-            <img src="assets/artwork-2.jpg" alt="Coastal Embrace artwork" />
+            <img src="assets/artwork-2.jpg" alt="Futuristic Nanobot" />
           </div>
           <div class="card-body">
             <p>Futuristic Nanobot</p>
@@ -90,14 +89,15 @@
         </article>
         <article class="card">
           <div class="card-media">
-            <img src="assets/artwork-3.jpg" alt="Twilight Reflections artwork" />
+            <img src="assets/artwork-3.jpg" alt="The Great Wave" />
           </div>
           <div class="card-body">
             <p>The Great Wave</p>
           </div>
         </article>
       </div>
-    </div>
+    <div style="text-align:center; margin-top:20px;">
+    <a href="gallery.html" class="btn btn-primary">View Full Gallery</a>
   </section>
 
   <!-- About -->
@@ -142,7 +142,7 @@
       </div>
       <div class="contact-grid">
         <!-- Keep the form using a front-end service (replace FORM_ID in action below to activate) -->
-        <form class="card form" method="POST" action="https://formspree.io/f/FORM_ID">
+        <form class="card form" id="contact-form" method="POST" action="https://formspree.io/f/xqaloppy">
           <div class="form-row two">
             <label>First Name
               <input name="firstName" type="text" placeholder="Your first name" required />
@@ -157,9 +157,10 @@
           <label>Message
             <textarea name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
           </label>
-          <!-- You can set a redirect: <input type="hidden" name="_next" value="https://yoursite.com/thanks.html"> -->
-          <button class="btn btn-primary" type="submit">Send Message</button>
-          <!-- <p class="form-note muted">Tip: To enable this form, create a free Formspree form and replace <code>FORM_ID</code> in the action URL.</p> -->
+          <input type="hidden" name="_subject" value="New message from your site">
+          <input type="text" name="_gotcha" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px">
+          <button  class="btn btn-primary" type="submit">Send Message</button>
+          <p id="contact-status" aria-live="polite" hidden></p>
         </form>
 
         <!-- Split contact info into separate small cards -->
@@ -187,10 +188,9 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> Sunset Sea Studio. All rights reserved.</p>
+      <p>© <span id="year"></span> Autumn Spriggle. All rights reserved.</p>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

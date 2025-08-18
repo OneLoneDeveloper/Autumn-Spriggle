@@ -1,0 +1,33 @@
+/* Page-specific styles for the Full Gallery */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  z-index: 100;
+}
+
+.lightbox-overlay[hidden] {
+  display: none;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Optional: give images a subtle hover to indicate interactivity */
+.card-media img {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  cursor: zoom-in;
+}
+
+.card-media img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}

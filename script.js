@@ -91,3 +91,37 @@ setAboutGifForTheme(
   document.body.classList.contains('dark') ||
   document.documentElement.dataset.theme === 'dark'
 );
+
+
+
+
+
+
+
+const form = document.getElementById('contact-form');
+const statusEl = document.getElementById('contact-status');
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.hidden = false;
+    statusEl.textContent = 'Sending…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+
+      if (res.ok) {
+        form.reset();
+        statusEl.textContent = 'Thanks! Your message has been sent.';
+      } else {
+        statusEl.textContent = 'Something went wrong. Please try again.';
+      }
+    } catch (_) {
+      statusEl.textContent = 'Network error. Please try again.';
+    }
+  });
+}

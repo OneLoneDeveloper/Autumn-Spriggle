@@ -70,6 +70,12 @@ body{
 }
 .gradient{ background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end)); }
 
+.no-style {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
 /* =========================================================
    3) Header / Navigation
    ========================================================= */
