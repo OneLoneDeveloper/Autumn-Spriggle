@@ -8,19 +8,6 @@
   <meta name="description" content="Where autumn's warmth meets the sea's tranquility." />
   <link rel="preload" as="video" href="assets/hero-sunset.mp4" type="video/mp4" />
   <link rel="preload" as="video" href="assets/hero-night.mp4"  type="video/mp4" />
-  <script>
-    try {
-      let k='theme';
-      let t = localStorage.getItem(k);
-      if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
-      document.documentElement.setAttribute('data-theme', t);
-    } catch(e) {}
-  </script>
-
-  <!-- Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -29,10 +16,10 @@
   <header class="header" id="top">
     <div class="container nav">
       <div class="brand"><a class="no-style" href="index.html">Autumn Spriggle</a></div>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav id="primary-nav" class="nav-links" data-nav>
+      <nav class="nav-links" data-nav>
         <a href="#home">Home</a>
         <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
@@ -110,8 +97,7 @@
         </article>
       </div>
     <div style="text-align:center; margin-top:20px;">
-      <a href="gallery.html" class="btn btn-primary">View Full Gallery</a>
-    </div>
+    <a href="gallery.html" class="btn btn-primary">View Full Gallery</a>
   </section>
 
   <!-- About -->
