@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-
 /* =========================================================
    1) Design Tokens & Base
    ========================================================= */
+:root { color-scheme: light dark; }
+:root { --theme-transition: none; }
+html.theme-ready * { transition: var(--theme-transition); }
+
+
 :root{
   /* Background Colors */
   --bg:#F2F0E9; --bg-alt:#F8F8F6;
