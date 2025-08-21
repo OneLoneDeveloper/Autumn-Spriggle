@@ -131,7 +131,6 @@ body{
 .switch-input:checked + .switch{ background:var(--toggle-on-bg); }
 .switch-input:checked + .switch::after{ transform:translate(20px,-50%); }
 
-/* Switch spacing inside mobile dropdown */
 @media (max-width:780px){
   .nav-links .switch-wrap{ margin:6px 8px 2px; }
 }
