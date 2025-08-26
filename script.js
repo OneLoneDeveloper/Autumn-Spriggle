@@ -28,7 +28,6 @@ if (toggle && nav) {
   });
 }
 
-
 /* =========================================================
    2) Light vs Dark mode toggeling
    ========================================================= */
@@ -39,6 +38,7 @@ const THEME_KEY  = 'theme';
 
 const lightVid = document.querySelector('.hero-video--light');
 const darkVid  = document.querySelector('.hero-video--dark');
+const aboutGif = document.getElementById('about-gif');
 
 function syncVideos(theme){
   const isDark = theme === 'dark';
@@ -51,44 +51,6 @@ function syncVideos(theme){
   }
 }
 
-function applyTheme(theme){
-  rootEl.setAttribute('data-theme', theme);
-  if (modeToggle) modeToggle.checked = (theme === 'dark');
-  syncVideos(theme);
-}
-
-const saved = localStorage.getItem(THEME_KEY);
-applyTheme(saved ? saved : 'light');
-
-modeToggle?.addEventListener('change', () => {
-  const next = modeToggle.checked ? 'dark' : 'light';
-  applyTheme(next);
-  localStorage.setItem(THEME_KEY, next);
-  const isDark = document.documentElement.classList.contains('dark') ||
-                 document.body.classList.contains('dark') ||
-                 document.documentElement.dataset.theme === 'dark';
-  setAboutGifForTheme(isDark);
-});
-
-// Reduced motion: stop autoplay completely
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  [lightVid, darkVid].forEach(v => v?.pause());
-}
-
-
-/* =========================================================
-   3) 
-   ========================================================= */
-
-// Footer year
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-
-
-// Place near your theme code
-const aboutGif = document.getElementById('about-gif');
-
 function setAboutGifForTheme(isDark) {
   if (!aboutGif) return;
   const lightSrc = aboutGif.dataset.light || 'pinwheel.gif';
@@ -96,18 +58,30 @@ function setAboutGifForTheme(isDark) {
   aboutGif.src = isDark ? darkSrc : lightSrc;
 }
 
-// 1) run once on load (adjust selector to match how you mark dark mode)
-setAboutGifForTheme(
-  document.documentElement.classList.contains('dark') ||
-  document.body.classList.contains('dark') ||
-  document.documentElement.dataset.theme === 'dark'
-);
+function applyTheme(theme){
+  rootEl.setAttribute('data-theme', theme);
+  if (modeToggle) modeToggle.checked = (theme === 'dark');
+  syncVideos(theme);
+  setAboutGifForTheme(theme === 'dark');
+}
 
+const saved = localStorage.getItem(THEME_KEY);
+applyTheme(saved || 'light');
 
+modeToggle?.addEventListener('change', () => {
+  const next = modeToggle.checked ? 'dark' : 'light';
+  applyTheme(next);
+  localStorage.setItem(THEME_KEY, next);
+});
 
+// Reduced motion: stop autoplay completely
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  [lightVid, darkVid].forEach(v => v?.pause());
+}
 
-
-
+/* =========================================================
+   3) Contact Form
+   ========================================================= */
 
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('contact-status');
@@ -136,3 +110,12 @@ if (form) {
     }
   });
 }
+
+/* =========================================================
+   4) Current Year for footer
+   ========================================================= */
+
+// Footer year
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+

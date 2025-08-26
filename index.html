@@ -146,7 +146,7 @@
         <p>Interested in learning more about my work? I'd love to hear from you.</p>
       </div>
       <div class="contact-grid">
-        <!-- Keep the form using a front-end service (replace FORM_ID in action below to activate) -->
+        
         <form class="card form" id="contact-form" method="POST" action="https://formspree.io/f/xqaloppy">
           <div class="form-row two">
             <label>First Name
@@ -162,13 +162,16 @@
           <label>Message
             <textarea name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
           </label>
+
+          <!-- Anti-spam -->
           <input type="hidden" name="_subject" value="New message from your site">
           <input type="text" name="_gotcha" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px">
+
           <button  class="btn btn-primary" type="submit">Send Message</button>
           <p id="contact-status" aria-live="polite" hidden></p>
         </form>
 
-        <!-- Split contact info into separate small cards -->
+        <!-- Contact info -->
         <aside class="contact-aside">
           <div class="grid contact-cards">
             <div class="card contact-card">
