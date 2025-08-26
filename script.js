@@ -1,4 +1,7 @@
-// Mobile menu + smooth anchor scrolling + footer year
+/* =========================================================
+   1) Header / Navigation
+   ========================================================= */
+
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
 
@@ -25,10 +28,10 @@ if (toggle && nav) {
   });
 }
 
-// Footer year
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+/* =========================================================
+   2) 
+   ========================================================= */
 
 // Theme toggle + video sync
 const modeToggle = document.getElementById('mode-toggle');
@@ -68,6 +71,11 @@ modeToggle?.addEventListener('change', () => {
                  document.documentElement.dataset.theme === 'dark';
   setAboutGifForTheme(isDark);
 });
+
+
+// Footer year
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Reduced motion: stop autoplay completely
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
