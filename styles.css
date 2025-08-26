@@ -207,6 +207,9 @@ body{
   box-shadow:var(--shadow); overflow:hidden;
   transition:transform .35s ease, box-shadow .35s ease;
   will-change:transform;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 .card-media{ position:relative; overflow:hidden; }
 .card-media img{
