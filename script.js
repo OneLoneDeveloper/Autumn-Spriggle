@@ -30,10 +30,9 @@ if (toggle && nav) {
 
 
 /* =========================================================
-   2) 
+   2) Light vs Dark mode toggeling
    ========================================================= */
 
-// Theme toggle + video sync
 const modeToggle = document.getElementById('mode-toggle');
 const rootEl     = document.documentElement;
 const THEME_KEY  = 'theme';
@@ -43,7 +42,6 @@ const darkVid  = document.querySelector('.hero-video--dark');
 
 function syncVideos(theme){
   const isDark = theme === 'dark';
-  // Play the visible one, pause the hidden one (saves battery/CPU)
   if (isDark){
     darkVid?.play().catch(()=>{});
     lightVid?.pause();
@@ -72,15 +70,20 @@ modeToggle?.addEventListener('change', () => {
   setAboutGifForTheme(isDark);
 });
 
+// Reduced motion: stop autoplay completely
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  [lightVid, darkVid].forEach(v => v?.pause());
+}
+
+
+/* =========================================================
+   3) 
+   ========================================================= */
 
 // Footer year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Reduced motion: stop autoplay completely
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  [lightVid, darkVid].forEach(v => v?.pause());
-}
 
 
 // Place near your theme code
