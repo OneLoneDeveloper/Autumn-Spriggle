@@ -1,0 +1,2 @@
+Fix Theme Change switch glitch
+Make images in full gallery focusable
