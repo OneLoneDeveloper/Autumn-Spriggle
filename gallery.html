@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Full Gallery - Autumn Spriggle</title>
+  <title>Autumn Spriggle's Art Gallery</title>
+  <meta name="description" content="I'm Autumn, an Artist, Content Writer, and Digital Marketer." />
+
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light' } catch {} </script>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="gallery.css" />
 </head>
 
 <body>
-  <header class="header">
+
+  <header class="header" id="top">
     <div class="container nav">
-      <div class="brand"><a class="no-style" href="index.html">Autumn Spriggle</a></div>
-      <nav class="nav-links">
+      <!-- Brand -->
+      <a class="brand" href="index.html">Autumn Spriggle</a>
+      <!-- Navbar Links -->
+      <nav class="nav-links" data-nav>
         <span class="switch-wrap">
           <input id="mode-toggle" class="switch-input" type="checkbox" aria-label="Toggle theme"/>
           <label class="switch" for="mode-toggle" aria-hidden="true"></label>
